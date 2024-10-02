@@ -1,6 +1,6 @@
 # WCSharp
 
-**WCSharp** is a collection of libraries for C# development of custom maps and mods for Warcraft III. These libraries enables you to **write map logic in C# and transpile it into Lua** code that the game engine can understand.
+**WCSharp** is a collection of libraries for C# development of custom maps and mods for Warcraft III. With these libraries you can **write map logic in C#** and transpile it into Lua code that the game engine can understand.
 
 **Advantages of WCSharp over Lua (or Jass):**
 * **Better Code:** C# is natively object-oriented, enabling cleaner, more maintainable code.
