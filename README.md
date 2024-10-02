@@ -1,19 +1,55 @@
 # WCSharp
-This is a set of libraries designed to assist in the WarCraft III mapmaking using C#.
-Development of the C#-to-Lua transpilation that WCSharp depends on can be followed in [this thread](https://www.hiveworkshop.com/threads/c-mapmaking-in-csharp.317839/).
 
-### Getting started
-A quick setup/template for getting a map with WCSharp up and running can be found [here](https://github.com/Orden4/WCSharp/wiki/WCSharp-template).  
-For those not using the template, all of WCSharp is available via NuGet packages.
+**WCSharp** is a collection of libraries for C# development of custom maps and mods for Warcraft III. These libraries enables you to **write map logic in C# and transpile it into Lua** code that the game engine can understand.
 
-### API
-The WCSharp API has recently launched, serving as a replacement and upgrade to War3Api. To find out more, [check the wiki page about it](https://github.com/Orden4/WCSharp/wiki/WCSharp.Api).
+**Advantages of WCSharp over Lua (or Jass):**
+* **Better Code:** C# is natively object-oriented, enabling cleaner, more maintainable code.
+* **Type Safety:** Static typing prevents bugs during development, without the need for EmmyLua annotations.
+* **IDE:** Write Warcraft III map logic in Visual Studio.
+* **Built in Systems:** WCSharp has several [built in features for common systems](https://github.com/Orden4/WCSharp/wiki).
 
-### Documentation
-Information on the individual systems provided by these libraries can be found on the [wiki](https://github.com/Orden4/WCSharp/wiki)!  
-There you can also find the [release notes](https://github.com/Orden4/WCSharp/wiki/Release-notes) that have been logged since v2.1.0.
+## Getting Started
 
-In addition to the wiki, WCSharp is extensively documented via Visual Studio's built-in XML documentation, allowing you to simply hover over references to get detailed information. Thanks to [Default Documentation](https://github.com/Doraku/DefaultDocumentation)'s automatic generation, [the entire documentation can also be seen on GitHub itself](https://github.com/Orden4/WCSharp/tree/master/Docs/README.md).
+### Requirements
 
-### Help improve WCSharp
-Feel free to report bugs, make suggestions or request features via creating a [new issue](https://github.com/Orden4/WCSharp/issues), or opening a pull request if you make any changes yourself.
+* **C# development environment** (like **Visual Studio**):
+	* When installing Visual Studio, make sure you select **Desktop & Mobile > .NET Desktop Development**.
+	* If you've installed Visual Studio previously you can launch the **Visual Studio Installer** and **Modify** your installation instead.
+	* WCSharp is built for .NET 6 and requires **Visual Studio 17.0 or higher**.
+
+### Installation
+
+1. Download the [WCSharp template](https://github.com/Orden4/WCSharp/wiki/WCSharp-template).
+2. Drag-and-drop the source.w3x folder onto an open World Editor window to open the template map.
+3. Go to the Object Editor and copy the Dummy unit.
+4. Create a new map (or open an existing map) and paste the Dummy unit into the Object Editor.
+5. Go to **Scenario > Map Options** and set the Script Language to Lua.
+6. Save your map as **Warcraft III Scenario Folder - Expansion**.
+7. Open `WCSharpTemplate.sln` with Visual Studio and right click the `Launcher` project and select `Set as Startup Project`.
+8. Right click the `Launcher` project and click `Manage NuGet Packages`. Update all NuGet packages.
+9. Set the path to your Warcraft III executable in `Launcher/app.config`.
+10. Set the `BASE_MAP_PATH` in `Launcher/Program.cs` to the path of your saved map-folder.
+11. Move the included `Blizzard.j` and `common.j` files to `C:\Users\[Username]\My Documents\Warcraft III\JassHelper`.
+## WCSharp.API
+
+**WCSharp** features a [dedicated API](https://github.com/Orden4/WCSharp/wiki/WCSharp.Api), serving as a replacement for War3Api. It acts as a wrapper around Warcraft III handles, provides a more intuitive way of interacting with them:
+
+```cs
+// War3Api
+var unit = CreateUnit("hfoo", Player(0), 0, 0, 270); // Create a unit
+SetUnitState(unit, UNIT_STATE_MANA, GetUnitState(unit, UNIT_STATE_MANA) + 50); // Increase its mana by 50
+KillUnit(unit); // Kill the unit
+
+// WCSharp.Api
+var unit = unit.Create("hfoo", Player(0), 0, 0, 270); // constructor support will be added in the future, there's a bug with CSharpLua for the time being
+unit.Mana += 50;
+unit.Kill();
+```
+
+## Documentation
+
+Each individual system is documented in the [wiki](https://github.com/Orden4/WCSharp/wiki). The code also includes Visual Studio XML documentation, simply hover over code elements in your IDE to access helpful descriptions and usage examples.
+
+## Contribute
+
+We welcome contributions from the community to help improve WCSharp. If you encounter any bugs, have suggestions for new features, or want to help improve the code, feel free to open a [new issue](https://github.com/Orden4/WCSharp/issues) or submit a pull request.
