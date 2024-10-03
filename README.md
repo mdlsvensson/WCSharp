@@ -20,16 +20,21 @@
 ### Installation
 
 1. Download the [WCSharp template](https://github.com/Orden4/WCSharp/wiki/WCSharp-template).
-2. Drag-and-drop the source.w3x folder onto an open World Editor window to open the template map.
-3. Go to the Object Editor and copy the Dummy unit.
-4. Create a new map (or open an existing map) and paste the Dummy unit into the Object Editor.
-5. Go to **Scenario > Map Options** and set the Script Language to Lua.
-6. Save your map as **Warcraft III Scenario Folder - Expansion**.
-7. Open `WCSharpTemplate.sln` with Visual Studio and right click the `Launcher` project and select `Set as Startup Project`.
-8. Right click the `Launcher` project and click `Manage NuGet Packages`. Update all NuGet packages.
-9. Set the path to your Warcraft III executable in `Launcher/app.config`.
-10. Set the `BASE_MAP_PATH` in `Launcher/Program.cs` to the path of your saved map-folder.
-11. Move the included `Blizzard.j` and `common.j` files to `C:\Users\[Username]\My Documents\Warcraft III\JassHelper`.
+2. Open `WCSharpTemplate.sln` with Visual Studio and right click the `Launcher` project and select `Set as Startup Project`.
+3. Right click the `Launcher` project and click `Manage NuGet Packages`. Update all NuGet packages.
+4. Set the path to your Warcraft III executable in `Launcher/app.config`.
+5. Set the `BASE_MAP_PATH` in `Launcher/Program.cs` to the path of your saved map-folder.
+6. Move the included `Blizzard.j` and `common.j` files to `C:\Users\[Username]\My Documents\Warcraft III\JassHelper`.
+7. Run the `Launcher` project in Visual Studio.
+
+### Map Setup
+
+1. Drag-and-drop the source.w3x folder onto an open World Editor window to open the template map.
+2. Go to the Object Editor and copy the Dummy unit.
+3. Create a new map (or open an existing map) and paste the Dummy unit into the Object Editor.
+4. Go to **Scenario > Map Options** and set the Script Language to Lua.
+5. Save your map as **Warcraft III Scenario Folder - Expansion**.
+
 ## WCSharp.API
 
 **WCSharp** features a [dedicated API](https://github.com/Orden4/WCSharp/wiki/WCSharp.Api), serving as a replacement for War3Api. It provides an intuitive way of interacting with Warcraft III handles.
