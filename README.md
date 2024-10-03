@@ -32,7 +32,7 @@
 11. Move the included `Blizzard.j` and `common.j` files to `C:\Users\[Username]\My Documents\Warcraft III\JassHelper`.
 ## WCSharp.API
 
-**WCSharp** features a [dedicated API](https://github.com/Orden4/WCSharp/wiki/WCSharp.Api). Serving as a replacement for War3Api, it provides an intuitive way of interacting with Warcraft III handles.
+**WCSharp** features a [dedicated API](https://github.com/Orden4/WCSharp/wiki/WCSharp.Api), serving as a replacement for War3Api. It provides an intuitive way of interacting with Warcraft III handles.
 
 ```cs
 // War3Api
