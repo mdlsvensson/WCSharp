@@ -13,6 +13,7 @@
 ### Requirements
 
 **C# development environment** (like **Visual Studio**):
+
 	* When installing Visual Studio, make sure you select **Desktop & Mobile > .NET Desktop Development**.
 	* If you've installed Visual Studio previously you can launch the **Visual Studio Installer** and **Modify** your installation instead.
 	* WCSharp is built for .NET 6 and requires **Visual Studio 17.0 or higher**.
